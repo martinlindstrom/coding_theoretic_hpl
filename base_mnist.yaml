@@ -1,0 +1,25 @@
+# Example .yaml config file, with the standard hyperparameters used in the paper
+# Additional options are possible, and noted as comments wherever applicable
+dataset:
+  - type: "mnist"
+  - n_classes: 10 #required
+  - batch_size: 512 #required
+optimiser:
+  - type: "sgd" #"sgd" or "adam"
+  - lr: 0.1 #required
+  - momentum: 0.9 #required for "sgd"
+  - decay: 0.0005 #required
+  - nesterov: False #required for "sgd"
+scheduler:
+  - type: "cosine_no_restart" #either "cosine_no_restart" for CosineAnnealingLR, or "multi_step" for MultiStepLR
+  - factor: 0.1 # required for "multi-step"
+  - multi_step_epochs: [60,120,160] # required for "multi-step"
+model:
+  - type: "toy_model" #"resnet34" or "toy_model" for CIFAR or MNIST, respectively
+  - prototypes: "[x]" #"one_hot" or "rm_code" or "bch_code" or "mettes" or "logsumexp" or "kasarla" or "random_code"
+  - latent_dim: "[x]" #required for all codes: used as sanity check even for "one-hot" and "kasarla" codes
+loss:
+  - type: "[x]" #use "prototypical" or "crossentropy"
+train_params:
+  - epochs: 200 #required
+  - val_freq: 2 #required: denotes how often to check validation accuracy
