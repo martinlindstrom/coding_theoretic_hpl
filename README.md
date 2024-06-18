@@ -24,6 +24,10 @@ Start by creating a configuration `.yaml` file with run parameters (such as opti
 
 where the `--root` flag denotes the save directory where logs, checkpoints, and final models will be saved; `--config` takes the path to the config `.yaml` file; and `--dataset` takes the root path to the dataset you wish to train on. The identifier has to be unique (since the subdirectory `/path/to/saveroot/identifier/` is created when starting the script, and old runs will not be overwritten).
 
+## Recreating Figures
+
+We also provide the code which generates the plots in the paper. These scripts can also serve as an introduction on how to use the prototype generating classes in `models.py`. The motivating example in Figure 1 can be generated with `generate_motivating_example.py`. Comparing the separation across different dimensions, like in Figures 2, 6, and 7, can be done with `compare_prototype_separation.py`. Finally, the cosine similarity histograms in Figures 3, 8, and 9 can be generated with `generate_prototype_histograms.py`.
+
 ## Dependencies
 
 The code is written for PyTorch, and requires the usual PyTorch/Torchvision/NumPy family of packages, as well as a few from the Python3 standard library. It is written for PyTorch 2.3 and Torchvision 0.18, but would probably work for older versions as well (with minor, if any, modifications). Additionally, the code requires the `Galois` package (please find its documentation [here](https://galois.readthedocs.io/en/stable/)). One known issue with older versions of Torchvision is that the API for data import/augmentation changed with `torchvision.transforms.v2`, but changing only a couple of lines makes the code compatible with the older `torchvision.transforms` functions. In particular, the code is tested with the following versions:
