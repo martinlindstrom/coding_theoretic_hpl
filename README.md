@@ -10,10 +10,15 @@ We propose two new methods for designing hypershperical prototypes and present s
 2. We derive a *converse* bound on the guaranteed minimum prototype separation as well as an *achievable* bound that certifies that well-separated code-based prototypes exist. These bounds imply that for a large number of classes $K$ and in high dimensions $n$, the worstcase cosine similarity converges to zero. The bounds also show that our code-based prototypes closely approach optimal separation for $n \approx K/2$.
 3. Finally, we provide alternative optimization-based hyperspherical prototypes which achieve the converse bound through a convex relaxation. These improve on the prototypes from literature, which do not achieve the converse bound.
 
-Please consider citing this work using the BibTeX entry below.
+This work was presented at the [GRaM workshop](https://gram-workshop.github.io) at the [International Conference on Machine Learning](https://icml.cc) (ICML) 2024, and will soon be published in the Proceedings of Machine Learning Research (PMLR) volume 251. A preprint of the paper is available on [arXiv](https://arxiv.org/abs/2407.07664), with a corresponding BibTeX entry below.
 
 ```
-to be added.
+@article{lindstrom_coding_2024,
+  title={{A} {C}oding-{T}heoretic {A}nalysis of {H}yperspherical {P}rototypical {L}earning {G}eometry},
+  author={Lindstr{\"o}m, Martin and Rodr{\'i}guez-G{\'a}lvez, Borja and Thobaben, Ragnar and Skoglund, Mikael},
+  journal={arXiv preprint arXiv:2407.07664},
+  year={2024}
+}
 ```
 
 ## Running the Code
